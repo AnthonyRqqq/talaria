@@ -16,10 +16,10 @@ const startServer = async () => {
   });
 
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join('/', "../dist")));
+    app.use(express.static(path.join('/', "../client/dist")));
 
     app.get("*", (req, res) => {
-      res.sendFile(path.join('/', "../dist/index.html"));
+      res.sendFile(path.join('/', "../client/dist/index.html"));
     });
   }
 
