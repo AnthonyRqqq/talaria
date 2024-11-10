@@ -16,10 +16,10 @@ const startServer = async () => {
   });
 
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join('/', "../client/dist")));
+    app.use(express.static(path.join('https://talariaquote.onrender.com/', "../client/dist")));
 
     app.get("*", (req, res) => {
-      res.sendFile(path.join('/', "../client/dist/index.html"));
+      res.sendFile(path.join('https://talariaquote.onrender.com/', "../client/dist/index.html"));
     });
   }
 
