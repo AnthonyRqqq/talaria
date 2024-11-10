@@ -10,7 +10,13 @@
     
 ## Description
     
- Talaria Quotes generates a random inspirational quote utilizing the ZenQuotes API. It queries for a random quote at every page load, as well as at every click of the "New Quote" button. These quotes stem from a variety of authors and spokespeople across various time periods and backgrounds. Quotes are limited to 5 responses per 30 second period due to the API.
+ Talaria Quotes generates a random inspirational quote utilizing the ZenQuotes API. 
+ 
+ It queries for a random quote at every page load, as well as at every click of the "New Quote" button. 
+ 
+ These quotes stem from a variety of authors and spokespeople across various time periods and backgrounds. 
+ 
+ Quotes are limited to 5 responses per 30 second period due to limitations surrounding the API.
     
 ## License
     
