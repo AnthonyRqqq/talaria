@@ -1,3 +1,9 @@
 * {
     font-family: "Inter var", sans-serif;
 }
+
+body {
+    height: 90vh;
+    background-color: black;
+    overflow-y: hidden;
+}

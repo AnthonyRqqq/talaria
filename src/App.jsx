@@ -33,10 +33,10 @@ function App() {
           </Card>
 
           <div className="new-quote">
-            <Button label="New Quote" onClick={() => newQuote()} />
+            <Button label="New Quote" severity="help" onClick={() => newQuote()} />
           </div>
 
-          <div className="text-div">
+          {/* <div className="text-div">
             <p>
               Want to get daily texts? Input your number below and press submit!
             </p>
@@ -44,7 +44,7 @@ function App() {
             <div>
               <Button label="Submit" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
