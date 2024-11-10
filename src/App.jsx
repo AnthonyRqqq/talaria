@@ -25,7 +25,7 @@ function App() {
     <div className="app-div">
       <div>
         <div>
-          <h1>Talaria</h1>
+          <h1>Talaria Quotes</h1>
         </div>
         <div>
           <Card title={quote.author}>
