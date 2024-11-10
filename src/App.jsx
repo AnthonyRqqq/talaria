@@ -33,7 +33,11 @@ function App() {
           </Card>
 
           <div className="new-quote">
-            <Button label="New Quote" severity="help" onClick={() => newQuote()} />
+            <Button
+              label="New Quote"
+              severity="help"
+              onClick={() => newQuote()}
+            />
           </div>
 
           {/* <div className="text-div">
@@ -45,6 +49,15 @@ function App() {
               <Button label="Submit" />
             </div>
           </div> */}
+
+          <div className="credit">
+            <p>
+              Inspirational quotes provided by{" "}
+              <a href="https://zenquotes.io/" target="_blank">
+                ZenQuotes API
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
