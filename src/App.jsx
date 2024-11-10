@@ -18,7 +18,7 @@ function App() {
   const newQuote = async () => {
     const data = await getQuote();
     setQuote(data);
-    console.log(data)
+    console.log(data);
   };
 
   return (
@@ -31,6 +31,10 @@ function App() {
           <Card title={quote.author}>
             <p>{quote.quote}</p>
           </Card>
+
+          <div className="new-quote">
+            <Button label="New Quote" onClick={() => newQuote()} />
+          </div>
 
           <div className="text-div">
             <p>

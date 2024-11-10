@@ -7,8 +7,14 @@ h1 {
     text-align: center;
 }
 
+.new-quote {
+    text-align: center;
+    margin-top: 1rem
+}
+
 .text-div {
     text-align: center;
+    margin-top: 5rem
 }
 
 .text-div > input {
