@@ -1,13 +1,9 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
-import { fileURLToPath } from "url";
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const startServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
@@ -20,10 +16,10 @@ const startServer = async () => {
   });
 
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client/dist")));
+    app.use(express.static(path.join('/', "../client/dist")));
 
     app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+      res.sendFile(path.join('/', "../client/dist/index.html"));
     });
   }
 
