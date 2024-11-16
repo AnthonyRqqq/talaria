@@ -1,6 +1,6 @@
-import express from "express";
-import cors from "cors";
-import path from "path";
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -17,20 +17,16 @@ const startServer = async () => {
   });
 
   if (process.env.NODE_ENV === "production") {
-    // Fix for __dirname in ES modules
-    const __dirname = path.dirname(new URL(import.meta.url).pathname);
-    const clientDistPath = path.join(__dirname, "../client/dist");
+    app.use(express.static(path.join(__dirname, "../client/dist")));
 
-    // Serve static files
-    app.use(express.static(clientDistPath));
-
-    // Ensure the path to index.html is absolute
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(clientDistPath, "index.html"));
+      res.sendFile(path.join(__dirname, "../client/dist/index.html"));
     });
   }
 
-  app.listen(PORT, () => console.log(`Server running on port ${PORT} 🔥`));
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+  });
 };
 
 startServer();
