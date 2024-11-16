@@ -10,6 +10,7 @@ import "./app.css";
 
 function App() {
   const [quote, setQuote] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     newQuote();
@@ -18,7 +19,6 @@ function App() {
   const newQuote = async () => {
     const data = await getQuote();
     setQuote(data);
-    console.log(data);
   };
 
   return (
@@ -36,7 +36,12 @@ function App() {
             <Button
               label="New Quote"
               severity="help"
-              onClick={() => newQuote()}
+              loading={loading}
+              onClick={async () => {
+                setLoading(true);
+                await newQuote();
+                setLoading(false);
+              }}
             />
           </div>
 
