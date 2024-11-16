@@ -4,6 +4,7 @@ import path from "path";
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
 const startServer = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
@@ -16,11 +17,16 @@ const startServer = async () => {
   });
 
   if (process.env.NODE_ENV === "production") {
+    // Fix for __dirname in ES modules
     const __dirname = path.dirname(new URL(import.meta.url).pathname);
-    app.use(express.static(path.join(__dirname, "../client/dist")));
+    const clientDistPath = path.join(__dirname, "../client/dist");
 
+    // Serve static files
+    app.use(express.static(clientDistPath));
+
+    // Ensure the path to index.html is absolute
     app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+      res.sendFile(path.resolve(clientDistPath, "index.html"));
     });
   }
 
